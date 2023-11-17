@@ -19,7 +19,7 @@ def load_spending_data():
         pass
     return categories
 
-# Save spending data to file
+# Save spending data to file 
 def save_spending_data(categories):
     with open('spending.csv', 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
