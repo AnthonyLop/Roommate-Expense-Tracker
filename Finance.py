@@ -44,13 +44,13 @@ def visualize_spending(categories, savings_goal):
     # Rotate x-axis labels and set their alignment
     plt.setp(ax.get_xticklabels(), rotation=45, ha='right', rotation_mode='anchor')
 
-    # Add a grid to the graph
+    # Adding a grid to the graph
     ax.grid(axis='y')
 
-    # Add a horizontal line representing the savings goal
+    # Adding a horizontal line representing the savings goal
     ax.axhline(y=savings_goal, color='r', linestyle='--', label='Savings Goal')
 
-    # Add a legend
+    # Adding a legend
     ax.legend()
 
     plt.show()
