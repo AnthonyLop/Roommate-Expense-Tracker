@@ -27,28 +27,39 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="About.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Finance.html">Finance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Expense.html">Expense Allocation</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="calculator">
-        <label for="income">Your Monthly Income:</label>
-        <input type="number" id="income" placeholder="Enter your income">
-
-        <label for="expenses">Your Monthly Expenses:</label>
-        <input type="number" id="expenses" placeholder="Enter your expenses">
-
+    <section id="Finance">
+        <label for="income1">Your First Monthly Income:</label>
+        <input type="number" id="income1" placeholder="Enter your first income">
+    
+        <label for="income2">Your Second Monthly Income:</label>
+        <input type="number" id="income2" placeholder="Enter your second income">
+    
+        <label for="expenses1">Rent:</label>
+        <input type="number" id="expenses1" placeholder="Enter expense 1">
+    
+        <label for="expenses2">Utilities:</label>
+        <input type="number" id="expenses2" placeholder="Enter expense 2">
+    
         <button onclick="calculateBudget()">Calculate</button>
         <button onclick="downloadResults()">Download Results</button>
-
+    
         <div id="result"></div>
     </section>
+    
+    
 
 </body>
 
