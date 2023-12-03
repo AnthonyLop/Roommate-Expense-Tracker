@@ -1,20 +1,11 @@
-/* Reset some default styles */
-body,
-h1,
-h2,
-p {
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    background-color: #f8f8f8;
 }
 
-/* Header styling */
+/* Styles for the Home Page header */
 header {
     color: #000000;
     text-align: center;
@@ -27,109 +18,225 @@ h1 {
     margin: 2rem 0;
 }
 
-/* Navbar styling */
+/* Styles for the main navbar */
 .navbar {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #007bff;
+    background-color: #343a40;
 }
-
 .navbar-toggler {
-    background-color: #fff;
+    background-color: #3498db;
     border: 1px solid #fff;
 }
-
 .navbar-toggler-icon {
-    background-color: #812222;
-    border-radius: 0;
+    background-color: #3498db;
+    border-radius: 0;  
 }
-
 .navbar-nav {
     display: flex;
     justify-content: flex-end;
 }
-
 .nav-item {
     margin-right: 10px;
 }
-
 .nav-link {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
-
 .nav-link:hover {
     color: #f0f0f0;
 }
 
-/* Main content container styling */
+/* Styles for the Home Page container */
+#intro {
+    margin-bottom: 20%;  
+}
 .container {
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    margin-top: 20px;
+    background-color: #f8f9fa; 
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    max-width: 950px; /* Adjust the max-width as needed */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Section styling */
-.section {
-    margin-top: 40px;
-}
-
-/* Footer styling */
-footer {
+#features h2 {
     text-align: center;
-    padding: 20px 0;
-    background-color: #007bff;
-    color: #ffffff;
+    margin-bottom: 30px;
 }
 
-/* Responsive styling for smaller screens */
-@media (max-width: 768px) {
-    header {
-        padding: 20px 0;
-    }
-
-    .container {
-        margin-top: 20px;
-    }
+#features .col-md-4 {
+    margin-bottom: 30px;
 }
 
-/* Calculator styling */
-#calculator {
-    max-width: 400px;
+#features h3 {
+    color: #000000; 
+}
+
+#features p {
+    color: #555; 
+}
+
+/* Style the call-to-action (CTA) section */
+#cta {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#cta h2 {
+    margin-bottom: 20px;
+}
+
+#cta p {
+    color: #777;  
+}
+
+#cta .btn-primary {
+    background-color: #007bff; 
+    border-color: #007bff;
+}
+
+#cta .btn-primary:hover {
+    background-color: #0056b3;  
+    border-color: #0056b3;
+}
+
+/*-----------CSS for Expense-----------*/
+/* Styles for container */
+.container1 {
+    width: 60%;
     margin: 50px auto;
-    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: center;
 }
 
+.expense-header {
+    color: #333; 
+    padding: 14px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+
+}
+
+.expense-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+      
+}
+
+.expense-header p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: black;
+}
+
+/* Styles for the Expense Allocation form */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+label[for="numRoommates"] {
+    display: block;  
+    margin-bottom: 10px;  
+    margin-left: 10px ;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+input {
+    width: fit;  
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styles for the Roommates toggle */
 label {
     display: block;
     margin-bottom: 10px;
 }
 
-input {
+select {
     width: 100%;
     padding: 8px;
-    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+/*-----------CSS for Finance-----------*/
+
+#Finance {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
     box-sizing: border-box;
 }
 
 button {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    width: 100%;
     margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
 
 #result {
     margin-top: 20px;
-    font-weight: bold;
-    font-size: 18px;
-    color: #27ae60;
+    text-align: left;
+}
+
+/*-----------CSS for About-----------*/
+.About {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+  .logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 5px;
+    display: inline-block;
+    font-size: 90px;
+    margin-left: 10px;
 }
