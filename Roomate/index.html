@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,43 +26,50 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="About.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Finance.html">Finance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Expense.html">Expense Allocation</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="text-center mt-5">
-        <h1>Welcome to Roommate Finances</h1>
-        <p class="lead">Track and manage your shared expenses effortlessly</p>
-    </header>
+    <div class="container">
+        <section id="intro">
+            <h1>Roommate Finances</h1>
+            <p>Effortlessly manage and track your shared expenses with your roommates. Achieve financial harmony and
+                transparency in your shared living space.</p>
+        </section>
 
-    <section class="container mt-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Expense Summary</h2>
-                <p>Stay organized with a clear overview of shared expenses.</p>
-         
+        <section id="features">
+            <h2>Key Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="Expense.html">
+                        <h3>Expense Tracking</h3>
+                    </a>
+                    <p>Log and monitor shared expenses to keep everyone accountable and aware of financial
+                        responsibilities.</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="Finance.html">
+                        <h3>Budget Management</h3>
+                    </a>
+                    <p>Create and manage budgets between roommates to ensure financial stability and avoid surprises.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Reports and Insights</h3>
+                    <p>Generate detailed reports and gain insights into your spending patterns for better financial
+                        planning.</p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h2>Monthly Budget</h2>
-                <p>Plan and allocate budget for shared bills and expenses.</p>
-                 
-            </div>
-        </div>
-    </section>
-
-    <section class="container mt-5">
-        <h2>Recent Transactions</h2>
-        
-            </tbody>
-        </table>
-    </section>
-
+        </section>
+    </div>
 </body>
 
 </html>
