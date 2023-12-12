@@ -1,21 +1,10 @@
+/*-----------CSS for Index-----------*/
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
 }
 
-/* Styles for the Home Page header */
-header {
-    color: #000000;
-    text-align: center;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin: 2rem 0;
+.container {
+    margin-top: 20px;
 }
 
 /* Styles for the main navbar */
@@ -48,63 +37,123 @@ h1 {
     color: #f0f0f0;
 }
 
-/* Styles for the Home Page container */
-#intro {
-    margin-bottom: 20%;  
+.logout{
+    position: absolute;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: white;
+    background: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 1400px;
+  
 }
-.container {
+.content {
+    position: relative;
+    background: url('bar.jpg') 50% 50%;
+    background-size: cover;
+    flex: 1;
+    text-align: center;
+    color: #fff; /* Text color */
+    padding: 90px 0;  
+}
+  
+.content h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.content h3 {
+    margin: 1.5em 0;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    letter-spacing: -0.4;
+    color: #fff;
+}
+/* Styles for the features section */
+#features {
+    background-color:white;
+    padding: 50px 0;
     margin-top: 20px;
-    background-color: #f8f9fa; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    max-width: 950px; /* Adjust the max-width as needed */
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 20px;  
 }
 
-#features h2 {
-    text-align: center;
+#features h3{
+    text-align: left;
     margin-bottom: 30px;
 }
-
-#features .col-md-4 {
-    margin-bottom: 30px;
+.service {
+    background-color: white;
+    padding: 10px;/*Spacing of text in the containers*/
+    margin-bottom: 3%; 
+    border: 2px solid #343a40;
+    transition: all 0.3s;;
+    cursor: pointer;
+    height: 224px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
 }
 
-#features h3 {
-    color: #000000; 
+.service:hover {
+    border-color: #007BFF;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover for depth effect */
 }
 
-#features p {
-    color: #555; 
+.service h3 {
+    color: black;
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
-/* Style the call-to-action (CTA) section */
-#cta {
-    text-align: center;
-    margin-top: 50px;
+.service p {
+    color: black;
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+.service a {
+    display: block; /* Make the whole container clickable */
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Remove underline from link */
+  }
+  
+  /* Icon Style*/
+  .icon {
+    padding: 2px; /* Adjust padding as needed */
+    width: 40px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; /* Icon color */
+    font-size: 1em; /* Adjust font size as needed */
+    margin-bottom: 15px; /* Adjust margin as needed */
+    margin-left: auto; /* Move the icon to the right */
+    transition: all 0.3s;
 }
 
-#cta h2 {
-    margin-bottom: 20px;
+@keyframes skewEffect {
+    0% {
+        transform: skewX(0deg);
+    }
+    100% {
+        transform: skewX(10deg);
+    }
 }
 
-#cta p {
-    color: #777;  
+.icon:hover {
+    transform: scale(1.1) translateX(-20px) skewX(10deg);
+    transition: transform 0.5s ease, colorShift 10s ease-in-out, skewEffect 10s ease-in-out;
 }
 
-#cta .btn-primary {
-    background-color: #007bff; 
-    border-color: #007bff;
-}
-
-#cta .btn-primary:hover {
-    background-color: #0056b3;  
-    border-color: #0056b3;
-}
 
 /*-----------CSS for Expense-----------*/
+
 /* Styles for container */
 .container1 {
     width: 60%;
@@ -128,6 +177,7 @@ h1 {
     margin: 0;
     font-size: 24px;
     color: black;
+    font-weight: bold;
       
 }
 
@@ -190,6 +240,7 @@ label {
     display: block;
     margin-bottom: 10px;
     text-align: left;
+    font-weight: bold;
 }
 
 input {
@@ -220,23 +271,112 @@ button:hover {
 }
 
 /*-----------CSS for About-----------*/
-.About {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+
+/* Style the container for the about section */
+.about-container {
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
+    text-align: center; /* Center text in the container */
+    height: 900px; /* Set your desired height */
+    overflow: auto; /* Add overflow property if content exceeds the fixed height */
 }
-  .logo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 5px;
-    display: inline-block;
-    font-size: 90px;
-    margin-left: 10px;
+/* Style the logo */
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 40px; /* Adjust the margin-bottom to create space */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
+
+/* Style the headings */
+h1, h2, h3 {
+    color: black;
+}
+
+/* Style paragraphs */
+p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Style the contact email */
+.contact-email {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/*-----------CSS for Report-----------*/
+
+/* Chart Styles */
+#graph-container {
+    max-width: 800px;
+    margin: 20px auto;
+    box-sizing: border-box; /* Include padding and border in the total width */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflow to prevent shadow clipping */
+}
+#chart {
+    width: 100%;
+    height: auto;
+}
+
+.text-container {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+ /* Form Styles */
+ #report-form {
+    position: absolute; /* Use absolute positioning */
+    top: 100px; /* Adjust the top position as needed */
+    left: 200px; /* Adjust the left position as needed */
+    max-width: 800px;
+    margin: 0; /* Reset margin to avoid additional spacing */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#chartContainer {
+    position: absolute; /* Use absolute positioning */
+    top: 120px; /* Adjust the top position as needed */
+    right: 180px; /* Adjust the right position as needed */
+    width: 600px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ 
