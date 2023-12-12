@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="java/expense.js"></script>
+    <title>Roommate Finances</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Finance.html">Finance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Reports.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Expense.html">Expense Allocation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container1">
+
+        <label for="numRoommates">Number of Roommates:</label>
+        <select id="numRoommates" onchange="updateRoommates()">8
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <div class="expense-header">
+            <h1>Expense Allocation</h1>
+            <p>Enter the amount each person owes for each expense</p>
+        </div>
+        <div id="expenseInputs">
+            <label for="rent">Rent:</label>
+            <input type="number" id="rent" placeholder="Enter rent amount">
+
+            <label for="utilities">Utilities:</label>
+            <input type="number" id="utilities" placeholder="Enter utilities amount">
+        </div>
+
+        <button onclick="calculateAllocation()">Calculate</button>
+        <button onclick="resetForm()">Reset</button>
+
+        <div id="result"></div>
+    </div>
+
+</body>
+
+</html>
