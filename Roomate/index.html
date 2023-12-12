@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="java/index.js"></script>
     <title>Roommate Finances</title>
 </head>
 
@@ -32,44 +32,66 @@
                         <a class="nav-link" href="Finance.html">Finance</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="Reports.html">Reports</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="Expense.html">Expense Allocation</a>
                     </li>
                 </ul>
             </div>
+            <button class="logout" onclick="logout()">Log out</button>
+
         </div>
     </nav>
 
-    <div class="container">
-        <section id="intro">
+    <div class="site">
+        <div class="nav"></div>
+        <div class="content">
+            <div class="overlay"></div>
             <h1>Roommate Finances</h1>
-            <p>Effortlessly manage and track your shared expenses with your roommates. Achieve financial harmony and
-                transparency in your shared living space.</p>
-        </section>
+            <h3>Effortlessly manage and track your shared expenses with your roommates.<br>Achieve financial harmony and transparency in your shared living space.</h3>
+        </div>
+    </div>
 
-        <section id="features">
-            <h2>Key Features</h2>
+    <section id="features">
+        <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="Expense.html">
-                        <h3>Expense Tracking</h3>
-                    </a>
-                    <p>Log and monitor shared expenses to keep everyone accountable and aware of financial
-                        responsibilities.</p>
+                    <div class="service">
+                        <a href="Finance.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="black" viewBox="0 0 16 16">
+                                <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
+                            </svg>
+                            <h3>Expense Tracking</h3>
+                            <p>Log and monitor shared expenses to keep everyone accountable and aware of financial responsibilities.</p>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <a href="Finance.html">
-                        <h3>Budget Management</h3>
-                    </a>
-                    <p>Create and manage budgets between roommates to ensure financial stability and avoid surprises.</p>
+                    <div class="service">
+                        <a href="Expense.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 640 512">
+                                <path d="M384 32H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H398.4c-5.2 25.8-22.9 47.1-46.4 57.3V448H512c17.7 0 32 14.3 32 32s-14.3 32-32 32H320 128c-17.7 0-32-14.3-32-32s14.3-32 32-32H288V153.3c-23.5-10.3-41.2-31.6-46.4-57.3H128c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c14.6-19.4 37.8-32 64-32s49.4 12.6 64 32zm55.6 288H584.4L512 195.8 439.6 320zM512 416c-62.9 0-115.2-34-126-78.9c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C627.2 382 574.9 416 512 416zM126.8 195.8L54.4 320H199.3L126.8 195.8zM.9 337.1c-2.6-11 1-22.3 6.7-32.1l95.2-163.2c5-8.6 14.2-13.8 24.1-13.8s19.1 5.3 24.1 13.8l95.2 163.2c5.7 9.8 9.3 21.1 6.7 32.1C242 382 189.7 416 126.8 416S11.7 382 .9 337.1z"/>
+                            </svg>
+                            <h3>Budget Management</h3>
+                            <p>Create and manage budgets between roommates to ensure financial stability and avoid surprises.</p>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h3>Reports and Insights</h3>
-                    <p>Generate detailed reports and gain insights into your spending patterns for better financial
-                        planning.</p>
+                    <div class="service">
+                        <a href="Reports.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 512 512">
+                                <path d="M461.2 128H80c-8.8 0-16-7.2-16-16s7.2-16 16-16h384c8.8 0 16-7.2 16-16 0-26.5-21.5-48-48-48H64C28.7 32 0 60.7 0 96v320c0 35.4 28.7 64 64 64h397.2c28 0 50.8-21.5 50.8-48V176c0-26.5-22.8-48-50.8-48zM416 336c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"/>
+                            </svg>
+                            <h3>Reports and Insights</h3>
+                            <p>Generate detailed reports and gain insights into your spending patterns for better financial planning.</p>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 </body>
 
 </html>
