@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
   <script src="java/login.js"></script>
   <link rel="stylesheet" href="login.css">
   <title>Roommate Finances</title>  
@@ -15,8 +16,9 @@
     <div class="shape"></div>
     <div class="shape"></div>
   </div>
-  
+
   <form id="loginForm">
+    
     <h3>Roommate Finances</h3>
 
     <label for="username">Username</label>
@@ -24,12 +26,17 @@
 
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password">
-    <a href="forgot.html">Forgot?</a> <button type="button" onclick="validateLogin()">Log In</button>
+
+    <a href="forgot.html">Forgot?</a> 
+    <a href="register.html">Register</a> 
+
+    <button type="button" onclick="validateLogin()">Log In</button>
+    
     <div class="social">
-      <div class="go"><i class="fab fa-google"></i> Google</div>
+        <i class="fab fa-google"></i> Google
     </div>
     
   </form>
-  
+
 </body>
 </html>
