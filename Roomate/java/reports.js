@@ -64,7 +64,6 @@ const trackExpenseAndVisualize = () => {
 
 // Function to visualize spending data using Chart.js
 const visualizeSpending = (categories) => {
-  // Filter out categories with zero spending
   const nonZeroCategories = Object.fromEntries(
     Object.entries(categories).filter(([category, amount]) => amount > 0)
   );
@@ -72,16 +71,13 @@ const visualizeSpending = (categories) => {
   const labels = Object.keys(nonZeroCategories);
   const sizes = Object.values(nonZeroCategories);
 
-  // Get the canvas and its context
   const canvas = document.getElementById('chart');
   const ctx = canvas.getContext('2d');
 
-  // Clear previous chart
-  if(window.myChart) {
+  if (window.myChart) {
     window.myChart.destroy();
   }
 
-  // Create new chart
   window.myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -90,7 +86,10 @@ const visualizeSpending = (categories) => {
         {
           label: 'Spending Amount',
           data: sizes,
-          backgroundColor: ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5'],
+          backgroundColor: ['#4CAF50', '#2196F3', '#FFC107', '#FF5722', '#E91E63'],
+          borderColor: '#333', // Border color for bars
+          borderWidth: 1,      // Border width for bars
+          borderRadius: 10,    // Bar border radius
         },
       ],
     },
@@ -115,48 +114,63 @@ const visualizeSpending = (categories) => {
           },
         ],
       },
+      legend: {
+        display: false,  // Hide legend as it's not needed for this chart
+      },
+      tooltips: {
+        callbacks: {
+          label: (tooltipItem) => `$${tooltipItem.yLabel.toFixed(2)}`,
+        },
+      },
     },
   });
 };
+
 
 const checkSavingsProgress = (goal, totalExpenses) => {
   if (goal > 0) {
     const progress = ((goal - totalExpenses) / goal) * 100;
     const remainingAmount = goal - totalExpenses;
-    
-    // Display savings progress as a prompt
-    const userInput = prompt(`Savings progress: ${progress.toFixed(2)}%\nYou are ${remainingAmount.toFixed(2)} away from your savings goal. Enter additional savings:`);
 
     // Update the text container on the left side of the calculator
     const savingsTextContainer = document.getElementById('savingsTextContainer');
     if (savingsTextContainer) {
-      savingsTextContainer.innerText = `Savings Progress: ${progress.toFixed(2)}%\nRemaining Amount: ${remainingAmount.toFixed(2)}`;
+      savingsTextContainer.innerText = `Savings Progress: ${progress.toFixed(2)}%\nAmount to Reach Goal: ${remainingAmount.toFixed(2)}`;
     }
   }
 };
 
-
 const resetForm = () => {
-    document.getElementById('expenseAmount').value = '';
-    document.getElementById('category').value = '';
-    document.getElementById('savingsGoal').value = '';
-  
-    // Clear the chart
-    if (window.myChart) {
-      window.myChart.destroy();
-    }
-  
-    // Reset data
-    for (let key in categories) {
-      delete categories[key];
-    }
-    for (let key in currentCategories) {
-      delete currentCategories[key];
-    }
-    // Reset savings progress and remaining amount
-    const savingsTextContainer = document.getElementById('savingsTextContainer');
-    if (savingsTextContainer) {
-      savingsTextContainer.innerText = '';
+  document.getElementById('expenseAmount').value = '';
+  document.getElementById('category').value = '';
+  document.getElementById('savingsGoal').value = '';
+
+  // Clear the chart
+  if (window.myChart) {
+    window.myChart.destroy();
   }
-  };
-  
+
+  // Reset data
+  for (let key in categories) {
+    delete categories[key];
+  }
+  for (let key in currentCategories) {
+    delete currentCategories[key];
+  }
+  // Reset savings progress and remaining amount
+  const savingsTextContainer = document.getElementById('savingsTextContainer');
+  if (savingsTextContainer) {
+    savingsTextContainer.innerText = '';
+}
+};
+
+// Function to download CSV file
+const downloadCSV = (data, filename) => {
+  const csvContent = "data:text/csv;charset=utf-8," + data.map(row => row.join(",")).join("\n");
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", filename);
+  document.body.appendChild(link);
+  link.click();
+};
