@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="java/login.js"></script>
+  <link rel="stylesheet" href="login.css">
+  <title>Roommate Finances</title>  
+</head>
+
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  
+  <form id="registerForm">
+    
+    <h3>Register</h3>
+
+    <label for="fullname">Full Name</label>
+    <input type="text" placeholder="Your Full Name" id="fullname" required>
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Your Email" id="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password" required>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+
+    <p>Already have an account? <a href="login.html">Log in here</a></p>
+
+    <button type="button" onclick="validateRegistration()">Register</button>
+
+  </form>
+
+</body>
+</html>
