@@ -47,28 +47,38 @@
 
     <div class="container1">
 
-        <label for="numRoommates">Number of Roommates:</label>
-        <select id="numRoommates" onchange="updateRoommates()">8
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <div class="expense-header">
-            <h1>Expense Allocation</h1>
-            <p>Enter the amount each person owes for each expense</p>
-        </div>
-        <div id="expenseInputs">
-            <label for="rent">Rent:</label>
-            <input type="number" id="rent" placeholder="Enter rent amount">
+        <!-- Form starts here -->
+        <form action="Expense.php" method="post">
 
-            <label for="utilities">Utilities:</label>
-            <input type="number" id="utilities" placeholder="Enter utilities amount">
-        </div>
+            <div class="expense-header">
+                <h1>Expense Allocation</h1>
+                <p>Enter the amount each person owes for each expense</p>
+            </div>
+            <div id="expenseInputs">
+                <!-- Input for Number of Roommates -->
+                <label for="numRoommates">Number of Roommates:</label>
+                <input type="number" id="numRoommates" name="numRoommates" placeholder="Enter number of roommates">
 
-        <button onclick="calculateAllocation()">Calculate</button>
-        <button onclick="resetForm()">Reset</button>
+                <label for="rent">Rent:</label>
+                <input type="number" id="rent" name="rent" placeholder="Enter rent amount">
 
-        <div id="result"></div>
+                <label for="utilities">Utilities:</label>
+                <input type="number" id="utilities" name="utilities" placeholder="Enter utilities amount">
+            </div>
+
+            <button onclick="calculateAllocation()">Calculate</button>
+            <button onclick="resetForm()">Reset</button>
+
+            <!-- History button -->
+            <button onclick="fetchHistory()">History</button>
+
+            <!-- Container to display history table -->
+            <div id="historyTableContainer" style="display:none;">
+                <div id="result"></div>
+            </div>
+        </form>
+        <!-- Form ends here -->
+
     </div>
 
 </body>
